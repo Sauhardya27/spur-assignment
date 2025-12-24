@@ -1,4 +1,3 @@
-````markdown
 # ShopEasy AI Chat Agent
 
 This is a chat application that uses Gemini API to answer user questions. The application has a frontend for the chat interface and a backend for handling the API requests and persisting the conversation data.
@@ -17,14 +16,13 @@ To install the application, follow these steps:
 1. Clone the repository:
 
    ```shell
-   git clone https://github.com/your-username/chat-application.git
+   git clone https://github.com/Sauhardya27/spur-assignment.git
    ```
-````
 
 2. Navigate to the project directory:
 
    ```shell
-   cd chat-application
+   cd spur-assignment
    ```
 
 3. Install the dependencies for the backend:
@@ -44,7 +42,7 @@ To install the application, follow these steps:
 5. Set up the local database:
 
    - Install a SQLite tool: Install a SQLite extension in VS Code (for example, the “SQLite” extension). No separate system-level SQLite installation is required.
-   - Create and initialize the SQLite database: Open `server/src/db/migrations.sql` in VS Code and run the SQL queries once using the extension’s “Run Query” / “Execute SQL” option. This will create the `chat.sqlite` database file and the required tables.
+   - Create and initialize the SQLite database: When you run the backend using `npm run dev` inside the `server` directory, the application automatically creates the `chat.sqlite` database file (if it does not already exist) and initializes the required tables using the schema defined in `server/src/db/migrations.sql`.
 
 ## Configuration
 
@@ -91,7 +89,6 @@ The backend is structured into well-defined layers:
 
   - SQLite database connection and initialization logic.
   - SQL schema defined in `migrations.sql`.
-  - Optional seed data in `seed.ts`.
 
 - **Middlewares (`src/middlewares`)**
 
@@ -157,11 +154,3 @@ If I had more time, I would consider the following improvements:
 - Implement caching to reduce the number of API calls to the LLM provider.
 - Add support for multiple LLM providers to allow for more flexibility.
 - Implement a chat history persistence mechanism to store and retrieve chat history for each user.
-
-## License
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
-
-```
-
-```
