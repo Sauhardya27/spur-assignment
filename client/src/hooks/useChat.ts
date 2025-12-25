@@ -3,8 +3,8 @@ import type { Message } from '../types/chat'
 import { sendMessage } from '../api/chatApi'
 import { getSessionId, setSessionId } from '../utils/session'
 
-const API_BASE_URL = import.meta.env.VITE_API_URL ?? 'http://localhost:4000'
-const HISTORY_URL = `${API_BASE_URL}/chat/history`
+const API_BASE_URL = import.meta.env.MODE === "development" ? "http://localhost:4000" : "/chat";
+const HISTORY_URL = `${API_BASE_URL}/history`
 
 export function useChat() {
   const [messages, setMessages] = useState<Message[]>([])

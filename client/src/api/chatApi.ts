@@ -1,5 +1,5 @@
-const API_BASE_URL = import.meta.env.VITE_API_URL ?? 'http://localhost:4000';
-const MESSAGE_URL = `${API_BASE_URL}/chat/message`;
+const API_BASE_URL = import.meta.env.MODE === "development" ? "http://localhost:4000" : "/chat";
+const MESSAGE_URL = `${API_BASE_URL}/message`;
 
 export async function sendMessage(message: string, sessionId?: string) {
   const res = await fetch(MESSAGE_URL, {
