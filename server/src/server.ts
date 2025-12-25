@@ -14,7 +14,7 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(cors());
 
-app.use("/api/chat", chatRoutes);
+app.use("/chat", chatRoutes);
 
 app.use(errorMiddleware);
 
