@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "nodemon --watch src --ext ts --exec \"node --loader ts-node/esm src/server.ts\"",
-    "build": "tsc",
+    "build": "tsc && copyfiles -u 1 \"src/db/**/*\" dist",
     "start": "node dist/server.js"
   },
   "keywords": [],
@@ -14,6 +14,7 @@
   "type": "module",
   "dependencies": {
     "@google/generative-ai": "^0.24.1",
+    "cookie-parser": "^1.4.7",
     "cors": "^2.8.5",
     "dotenv": "^17.2.3",
     "express": "^5.2.1",
@@ -22,9 +23,11 @@
     "uuid": "^13.0.0"
   },
   "devDependencies": {
+    "@types/cookie-parser": "^1.4.10",
     "@types/cors": "^2.8.19",
     "@types/express": "^5.0.6",
     "@types/node": "^25.0.3",
+    "copyfiles": "^2.4.1",
     "nodemon": "^3.1.11",
     "ts-node": "^10.9.2",
     "typescript": "^5.9.3"
